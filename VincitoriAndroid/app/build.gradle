@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -29,6 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -46,6 +51,8 @@ dependencies {
     // веломаршрутизацию, пешеходную маршрутизацию и маршрутизацию на общественном транспорте,
     // поиск, suggest, геокодирование и отображение панорам.
     implementation 'com.yandex.android:maps.mobile:4.0.0-full'
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
