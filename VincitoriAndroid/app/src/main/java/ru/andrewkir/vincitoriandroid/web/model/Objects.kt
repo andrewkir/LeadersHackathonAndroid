@@ -9,6 +9,4 @@ import java.util.*
 
 @Serializable
 @Parcelize
-data class Objects(
-    var objects: ArrayList<ObjectsItem>
-) : Parcelable
+class Objects: ArrayList<ObjectsItem>(), Parcelable
