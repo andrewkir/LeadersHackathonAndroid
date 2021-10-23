@@ -15,6 +15,19 @@
 
         <item name="android:windowTranslucentStatus">true</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+        <item name="android:editTextColor">@android:color/white</item>
+        <item name="android:textColorHint">#E5E5E5</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Gets rid of the search icon -->
+        <item name="searchIcon">@drawable/ic_search</item>
+        <!-- Gets rid of the "underline" in the text -->
+        <item name="queryBackground">@color/white</item>
+        <!-- Gets rid of the search icon when the SearchView is expanded -->
+        <item name="searchHintIcon">@null</item>
+        <!-- The hint text that appears when the user has not typed anything -->
+        <item name="queryHint">"Test"</item>
     </style>
 
     <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
@@ -31,5 +44,21 @@
         <item name="cornerSizeTopLeft">16dp</item>
         <item name="cornerSizeBottomRight">0dp</item>
         <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="CustomChipChoice" parent="@style/Widget.MaterialComponents.Chip.Choice" />
+
+    <style name="CustomThinChip" parent="@style/Widget.MaterialComponents.Chip.Action">
+        <item name="chipMinHeight">24dp</item>
+        <item name="chipMinTouchTargetSize">24dp</item>
+        <item name="chipIconSize">18dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body2_Thin</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialComponents.Chip_Thin</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialComponents.Chip_Thin" parent="">
+        <item name="cornerSize">12dp</item>
+    </style>
+    <style name="TextAppearance.MaterialComponents.Body2_Thin" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">12sp</item>
     </style>
 </resources>

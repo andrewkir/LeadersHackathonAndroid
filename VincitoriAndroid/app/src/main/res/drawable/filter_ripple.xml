@@ -3,11 +3,15 @@
     android:color="?android:colorControlHighlight">
 
     <item android:id="@android:id/mask">
-        <shape android:shape="rectangle">
+        <shape android:shape="oval">
             <solid android:color="?android:colorAccent" />
         </shape>
     </item>
 
-    <item android:drawable="@drawable/more_background" />
-
+    <item
+        android:bottom="12dp"
+        android:left="12dp"
+        android:right="12dp"
+        android:top="12dp"
+        android:drawable="@drawable/ic_filter" />
 </ripple>
