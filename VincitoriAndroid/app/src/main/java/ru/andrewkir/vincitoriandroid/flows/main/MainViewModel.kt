@@ -9,6 +9,7 @@ import kotlinx.coroutines.launch
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
+import org.json.JSONArray
 import org.json.JSONObject
 import ru.andrewkir.vincitoriandroid.common.BaseViewModel
 import ru.andrewkir.vincitoriandroid.web.model.*
@@ -69,7 +70,7 @@ class MainViewModel(
             body.put("objectName", query ?: "")
             if (!ids.isNullOrEmpty()) {
                 for (key in ids.keys) {
-                    body.put(key, ids[key])
+                    body.put(key, JSONArray(ids[key]))
                 }
             }
             val bodyRequest: RequestBody = RequestBody.create(
