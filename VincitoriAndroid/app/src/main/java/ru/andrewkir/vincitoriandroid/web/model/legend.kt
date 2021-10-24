@@ -8,11 +8,7 @@ import android.os.Parcelable
 
 @Serializable
 @Parcelize
-data class HeatMap(
-    @SerialName("geoRect")
-    var geoRect: GeoRect?,
-    @SerialName("matrix")
-    var matrix: List<List<Int>>?,
+data class legend(
     @SerialName("legend")
     var legend: List<LegendX>?
 ) : Parcelable

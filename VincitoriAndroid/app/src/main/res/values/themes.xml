@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.VincitoriAndroid" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">#2196F3</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -15,8 +15,8 @@
 
         <item name="android:windowTranslucentStatus">true</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
-        <item name="android:editTextColor">@android:color/white</item>
-        <item name="android:textColorHint">#E5E5E5</item>
+        <item name="android:editTextColor">#2196F3</item>
+        <item name="android:textColorHint">#CC2196F3</item>
     </style>
 
     <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
@@ -46,19 +46,35 @@
         <item name="cornerSizeBottomLeft">0dp</item>
     </style>
 
-    <style name="CustomChipChoice" parent="@style/Widget.MaterialComponents.Chip.Choice" />
+    <style name="CustomChipChoice" parent="@style/Widget.MaterialComponents.Chip.Filter" />
 
     <style name="CustomThinChip" parent="@style/Widget.MaterialComponents.Chip.Action">
         <item name="chipMinHeight">24dp</item>
         <item name="chipMinTouchTargetSize">24dp</item>
         <item name="chipIconSize">18dp</item>
-        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body2_Thin</item>
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialComponents.Chip_Thin</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body2_Thin
+        </item>
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay.MaterialComponents.Chip_Thin
+        </item>
     </style>
+
     <style name="ShapeAppearanceOverlay.MaterialComponents.Chip_Thin" parent="">
         <item name="cornerSize">12dp</item>
     </style>
+
     <style name="TextAppearance.MaterialComponents.Body2_Thin" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="DropDownCustomButton" parent="@style/Widget.MaterialComponents.Button.TextButton">
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:textSize">12sp</item>
     </style>
 </resources>

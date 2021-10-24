@@ -5,21 +5,35 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/drawable/bottom_sheet_background.xml" value="0.139" />
+        <entry key="app/src/main/res/drawable/button_dropdown_background.xml" value="0.109" />
+        <entry key="app/src/main/res/drawable/card_info_background.xml" value="0.29081597900390627" />
+        <entry key="app/src/main/res/drawable/card_layers_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/filter_ripple.xml" value="0.106" />
+        <entry key="app/src/main/res/drawable/ic_baseline_layers_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_place.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/ic_baseline_sort.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/drawable/ic_close.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/ic_filter.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_group_48.xml" value="0.2395" />
+        <entry key="app/src/main/res/drawable/ic_info.xml" value="0.106" />
+        <entry key="app/src/main/res/drawable/ic_info_filled.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/ic_line.xml" value="0.1055" />
+        <entry key="app/src/main/res/drawable/ic_outline_info_24.xml" value="0.106" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.106" />
+        <entry key="app/src/main/res/drawable/if_info_filled.xml" value="0.106" />
+        <entry key="app/src/main/res/drawable/info_background.xml" value="0.106" />
+        <entry key="app/src/main/res/drawable/layers_background.xml" value="0.2355" />
         <entry key="app/src/main/res/drawable/more_background.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/drawable/more_ripple.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/drawable/round_search.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/drawable/round_search_inner.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/search_background.xml" value="0.1645" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3303769401330377" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/bottom_menu.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/bottom_sheet.xml" value="0.23412382989867125" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/row_legend.xml" value="0.3572586059570313" />
         <entry key="app/src/main/res/layout/search_menu.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2824074074074074" />
         <entry key="app/src/main/res/xml/searchable.xml" value="0.1381340579710145" />

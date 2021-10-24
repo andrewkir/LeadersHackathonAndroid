@@ -5,22 +5,24 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import ru.andrewkir.vincitoriandroid.BuildConfig
 import java.util.concurrent.TimeUnit
 
-class ApiBuilder(val context: Context) {
+class ApiBuilder() {
     companion object {
         private const val BASE_URL = "http://84.201.155.32/"
     }
 
-    val instance: ApiService by lazy {
-        val retrofit = Retrofit.Builder()
+    fun <Api> provideApi(
+        api: Class<Api>
+    ): Api =
+        Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)
             .client(provideOkHTPPClient())
             .build()
-        retrofit.create(ApiService::class.java)
-    }
+            .create(api)
 
     private fun provideOkHTPPClient(): OkHttpClient {
         return OkHttpClient.Builder()
