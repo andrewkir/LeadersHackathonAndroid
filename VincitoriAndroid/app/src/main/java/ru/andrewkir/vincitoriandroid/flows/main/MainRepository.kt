@@ -24,4 +24,8 @@ class MainRepository(
     suspend fun getAttributes(id: Int) = protectedApiCall {
         apiService.getAttributes(id)
     }
+
+    suspend fun getSportZonesHeatMap() = protectedApiCall {
+        apiService.getSportsZonesHeatMap()
+    }
 }

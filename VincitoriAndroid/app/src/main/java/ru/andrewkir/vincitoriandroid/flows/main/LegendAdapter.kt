@@ -57,7 +57,8 @@ class LegendAdapter :
         (viewHolder as LegendViewHolder).colorView.foreground =
             ColorDrawable(Color.parseColor("#66${hexColor.slice(1 until hexColor.length)}"))
 
-        viewHolder.colorText.text = "${data[position].minValue!!.round(2)} - ${data[position].maxValue!!.round(2)}"
+        viewHolder.colorText.text =
+            "${data[position].minValueFormatted} - ${data[position].maxValueFormatted}"
     }
 
 

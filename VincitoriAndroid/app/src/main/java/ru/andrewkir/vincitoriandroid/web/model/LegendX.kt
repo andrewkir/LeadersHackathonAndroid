@@ -13,6 +13,10 @@ data class LegendX(
     var color: Int?,
     @SerialName("maxValue")
     var maxValue: Double?,
+    @SerialName("maxValueFormatted")
+    var maxValueFormatted: String?,
     @SerialName("minValue")
-    var minValue: Double?
+    var minValue: Double?,
+    @SerialName("minValueFormatted")
+    var minValueFormatted: String?
 ) : Parcelable

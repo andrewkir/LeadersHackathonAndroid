@@ -25,6 +25,13 @@ class MainViewModel(
         MutableLiveData<HeatMap>()
     }
 
+    val sportsZonesHeatMap: LiveData<HeatMap>
+        get() = mSportsZonesHeatMap
+
+    private val mSportsZonesHeatMap: MutableLiveData<HeatMap> by lazy {
+        MutableLiveData<HeatMap>()
+    }
+
     val attributes: LiveData<Attributes>
         get() = mAttributes
 
@@ -87,7 +94,7 @@ class MainViewModel(
                     mHeatMap.value = heatMap.value
                 }
                 is ApiResponse.OnErrorResponse -> {
-
+                    Log.d("error", heatMap.body.toString())
                 }
             }
         }
@@ -114,6 +121,19 @@ class MainViewModel(
                 }
                 is ApiResponse.OnErrorResponse -> {
                     Log.d("ERROR", attributes.isNetworkFailure.toString())
+                }
+            }
+        }
+    }
+
+    fun getSportZonesHeatMap(){
+        viewModelScope.launch {
+            when (val sportHeatMap = mainRepository.getSportZonesHeatMap()) {
+                is ApiResponse.OnSuccessResponse -> {
+                    mSportsZonesHeatMap.value = sportHeatMap.value
+                }
+                is ApiResponse.OnErrorResponse -> {
+                    Log.d("ERROR", sportHeatMap.isNetworkFailure.toString())
                 }
             }
         }

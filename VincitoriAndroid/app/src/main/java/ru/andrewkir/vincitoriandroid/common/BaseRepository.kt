@@ -25,6 +25,7 @@ abstract class BaseRepository {
                         ApiResponse.OnErrorResponse(false, null, null)
                     }
                     is JsonSyntaxException -> {
+                        ex.printStackTrace()
                         ApiResponse.OnErrorResponse(false, null, null)
                     }
                     else -> {
