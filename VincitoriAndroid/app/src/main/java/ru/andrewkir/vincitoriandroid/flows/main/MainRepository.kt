@@ -8,7 +8,7 @@ import ru.andrewkir.vincitoriandroid.web.service.ApiService
 class MainRepository(
     private val apiService: ApiService
 ) : BaseRepository() {
-    suspend fun getObjects(body: RequestBody? = null) = protectedApiCall{
+    suspend fun getObjects(body: RequestBody? = null) = protectedApiCall {
         apiService.getObjects(body)
     }
 
@@ -25,7 +25,11 @@ class MainRepository(
         apiService.getAttributes(id)
     }
 
-    suspend fun getSportZonesHeatMap() = protectedApiCall {
-        apiService.getSportsZonesHeatMap()
+    suspend fun getSportZonesHeatMap(body: RequestBody) = protectedApiCall {
+        apiService.getSportsZonesHeatMap(body)
+    }
+
+    suspend fun getStatistics() = protectedApiCall {
+        apiService.getStatistics()
     }
 }

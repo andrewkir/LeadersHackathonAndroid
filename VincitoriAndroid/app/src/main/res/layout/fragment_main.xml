@@ -139,9 +139,9 @@
                     android:layout_width="160dp"
                     android:layout_height="32dp"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
-                    android:layout_marginTop="8dp"
                     android:checked="false"
                     android:fontFamily="@font/roboto_bold"
                     android:paddingLeft="4dp"
@@ -298,7 +298,8 @@
             app:cardElevation="0dp"
             app:cardPreventCornerOverlap="false"
             app:layout_constraintBottom_toTopOf="@+id/infoButton"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -335,14 +336,57 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/legendTitle" />
 
+                <TextView
+                    android:id="@+id/zonesText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Спортзон/100к: 10"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/legendRecycler" />
+
+                <TextView
+                    android:id="@+id/areaZones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Площадь спортзон/100к: 730"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/zonesText" />
+
+                <TextView
+                    android:id="@+id/amountText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Кол-во видов спорт. услуг: 18"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/areaZones" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/legendRecycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Additionalinfo" />
+                    app:layout_constraintTop_toBottomOf="@+id/Additionalinfo">
+
+                </androidx.recyclerview.widget.RecyclerView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

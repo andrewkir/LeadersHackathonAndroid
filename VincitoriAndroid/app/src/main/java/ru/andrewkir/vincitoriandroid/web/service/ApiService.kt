@@ -9,10 +9,10 @@ import ru.andrewkir.vincitoriandroid.web.model.*
 
 interface ApiService {
 
-    @POST("/objects?fromLat=55.755819&fromLng=37.587644&toLat=55.785819&toLng=37.617644")
+    @POST("/objects?fromLat=55.1471993&fromLng=36.75571401&toLat=56.0785417&toLng=38.06930099")
     suspend fun getObjects(@Body body: RequestBody? = null): Objects
 
-    @GET("/heatmap/population-density?minLat=55.147199297273595&minLng=36.75571401201972&maxLat=56.078541702726405&maxLng=38.06930098798028")
+    @GET("/heatmap/population-density?minLat=55.1471993&minLng=36.75571401&maxLat=56.0785417&maxLng=38.06930099")
     suspend fun getHeatMap(): HeatMap
 
     @POST("http://84.201.155.32/heatmap/sportzone-density")
@@ -23,4 +23,7 @@ interface ApiService {
 
     @GET("/objects/attributes")
     suspend fun getAttributes(@Query("objectID") objectId: Int): Attributes
+
+    @GET("/statistics?minLat=55.1471993&minLng=36.75571401&maxLat=56.0785417&maxLng=38.06930099")
+    suspend fun getStatistics(): Statisctics
 }

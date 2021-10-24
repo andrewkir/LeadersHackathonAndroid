@@ -18,6 +18,13 @@ class MainViewModel(
     private val mainRepository: MainRepository
 ) : BaseViewModel(mainRepository) {
 
+    val statisctics: LiveData<Statisctics>
+        get() = mStatistics
+
+    private val mStatistics: MutableLiveData<Statisctics> by lazy {
+        MutableLiveData<Statisctics>()
+    }
+
     val heatMap: LiveData<HeatMap>
         get() = mHeatMap
 
@@ -56,11 +63,6 @@ class MainViewModel(
     var isApiSet: Boolean = false
     var displayedObjects: MapObject? = null
 
-    init {
-        getHeatMap()
-        getObjects()
-    }
-
     fun getObjects(query: String? = null, ids: Map<String, MutableList<Int>>? = null) {
         viewModelScope.launch {
             val body = JSONObject()
@@ -80,8 +82,7 @@ class MainViewModel(
                     mObjects.value = objects.value
                 }
                 is ApiResponse.OnErrorResponse -> {
-                    Log.d("ASD", objects.isNetworkFailure.toString())
-                    //TODO
+                    Log.d("Error", objects.isNetworkFailure.toString())
                 }
             }
         }
@@ -95,6 +96,20 @@ class MainViewModel(
                 }
                 is ApiResponse.OnErrorResponse -> {
                     Log.d("error", heatMap.body.toString())
+                }
+            }
+        }
+    }
+
+
+    fun getStatistics() {
+        viewModelScope.launch {
+            when (val statisctics = mainRepository.getStatistics()) {
+                is ApiResponse.OnSuccessResponse -> {
+                    mStatistics.value = statisctics.value
+                }
+                is ApiResponse.OnErrorResponse -> {
+                    Log.d("error", statisctics.body.toString())
                 }
             }
         }
@@ -126,9 +141,17 @@ class MainViewModel(
         }
     }
 
-    fun getSportZonesHeatMap(){
+    fun getSportZonesHeatMap(ids: Map<String, MutableList<Int>>? = null) {
         viewModelScope.launch {
-            when (val sportHeatMap = mainRepository.getSportZonesHeatMap()) {
+            val body = JSONObject()
+            if (!ids.isNullOrEmpty()) {
+                body.put("sportzoneIds", ids["sportzoneIds"])
+            }
+            val bodyRequest: RequestBody = RequestBody.create(
+                "application/json; charset=utf-8".toMediaTypeOrNull(),
+                body.toString()
+            )
+            when (val sportHeatMap = mainRepository.getSportZonesHeatMap(bodyRequest)) {
                 is ApiResponse.OnSuccessResponse -> {
                     mSportsZonesHeatMap.value = sportHeatMap.value
                 }
