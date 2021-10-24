@@ -9,7 +9,7 @@ import ru.andrewkir.vincitoriandroid.web.model.*
 
 interface ApiService {
 
-    @POST("/objects?fromLat=55.1471993&fromLng=36.75571401&toLat=56.0785417&toLng=38.06930099")
+    @POST("/objects?fromLat=55.709819&fromLng=37.539496&toLat=55.836174&toLng=37.714824")
     suspend fun getObjects(@Body body: RequestBody? = null): Objects
 
     @GET("/heatmap/population-density?minLat=55.1471993&minLng=36.75571401&maxLat=56.0785417&maxLng=38.06930099")
