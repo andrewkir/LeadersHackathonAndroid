@@ -8,21 +8,15 @@ import android.os.Parcelable
 
 @Serializable
 @Parcelize
-data class ObjectsItem(
+data class Attributes(
     @SerialName("address")
     var address: String?,
-    @SerialName("color")
-    var color: Int?,
-    @SerialName("id")
-    var id: Int?,
-    @SerialName("lat")
-    var lat: Double?,
-    @SerialName("lng")
-    var lng: Double?,
+    @SerialName("department")
+    var department: String?,
     @SerialName("name")
     var name: String?,
-    @SerialName("radius")
-    var radius: Int?,
-    @SerialName("square")
-    var square: Double?
+    @SerialName("proximity")
+    var proximity: String?,
+    @SerialName("sportzones")
+    var sportzones: List<Sportzone>?
 ) : Parcelable
